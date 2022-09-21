@@ -1,26 +1,44 @@
 <div id="container">
     <h1> Sign In </h1>
     <form [formGroup]="authorizationForm" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="user-email">*Enter your email:</label>
-            <input type="email" formControlName="user-email" placeholder="email@adress.com" maxlength="30">
-            <span *ngIf="!authorizationForm.get('user-email')?.valid && authorizationForm.get('user-email')?.touched"
-                class="hint-span">
-            Please, enter valid email!
-            </span>
+        <div class="row my-3">
+            <div class="col">
+              <label for="user-email" class="form-label"> Email </label>
+              <input type="email" 
+                     class="form-control form-control-sm" 
+                     id="user-email"
+                     formControlName="user-email" 
+                     placeholder="email@adress.com" 
+                     maxlength="30">
+              <span *ngIf="!authorizationForm.get('user-email')?.valid && authorizationForm.get('user-email')?.touched"
+                     class="hint-span">
+                Please, enter valid email!
+              </span>
+            </div>
         </div>
-        <div>
-            <label for="user-password">*Enter Your Password:</label>
-            <input type="password" formControlName="user-password" maxlength="20">
-            
-            <span *ngIf="!(authorizationForm.get('user-password')?.valid) && (authorizationForm.get('user-password')?.touched)"
-                    class="hint-span">
-                    <span *ngIf="authorizationForm.get('user-password')?.errors?.['required']"
-                    class="hint-span">Password is required!</span>
-                <span class="hint-span" *ngIf="(authorizationForm.get('user-password')?.errors?.['passwordNotStrength']) && !(authorizationForm.get('user-password')?.errors?.['required'])">
-                    Your password must have lower case, upper case and numeric characters.
-                </span>    
-            </span> 
+
+        <div class="row my-3">
+            <div class="col">
+                <label for="user-password" class="form-label"> Password </label>
+                <input type="password" 
+                       class="form-control form-control-sm" 
+                       id="user-password"
+                       formControlName="user-password" 
+                       maxlength="20">
+                    <span *ngIf="!(authorizationForm.get('user-password')?.valid) && (authorizationForm.get('user-password')?.touched)"
+                        class="hint-span">
+                        <span *ngIf="authorizationForm.get('user-password')?.errors?.['required']"
+                               class="hint-span">
+                            Password is required!
+                        </span>
+                        <span class="hint-span" *ngIf="(authorizationForm.get('user-password')?.errors?.['passwordNotStrength']) && !(authorizationForm.get('user-password')?.errors?.['required'])">
+                            Your password must have lower case, upper case and numeric characters.
+                        </span>    
+                    </span> 
+            </div>
         </div>
+
+        <button mat-stroked-button routerLink="auth"> Sign In </button>
+
     </form>
 </div>

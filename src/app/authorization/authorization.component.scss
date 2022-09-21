@@ -1,51 +1,40 @@
 #container {
-    background-color: rgba($color: #ffffff, $alpha: 0.1);
-    border-radius: 4px;
-    height: 20rem;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid lightgray;
+    min-height: 20rem;
+    height: fit-content;
     width: 30rem;
     padding: 1.5rem;
-}
-
-input {
-    width: 60%;
-    font-family: 'Montserrat', "Helvetica Neue", sans-serif;
-    display: block;
-    border: 2px solid white;
-    border-radius: 4px;
-    padding: 0.3rem;
-    margin: 0.2rem 0 0.5rem;
-    &:focus {
-        outline: none;
-    }
 }
 
 input.ng-invalid.ng-touched {
     border: 2px solid rgb(254, 87, 41);
 }
 
-label {
+.form-label {
     font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
 }
 
-// input {
-//     display: block;
-//     width: 60%;
-//     font-family: 'Montserrat', "Helvetica Neue", sans-serif;
-//     font-weight: 400;
-//     font-size: 1rem;
-//     border-radius: 4px;
-//     border-style: none;
-//     margin: 0 0 1rem 0;
-//     padding: 0.3rem;
-//   &:focus {
-//     outline-color: rgb(46, 94, 136);
-//   }
-// }  
-// input.ng-invalid.ng-touched {
-//     border: 3px solid rgb(252, 76, 76);
-// }
+.hint-span {
+    color: rgb(254, 87, 41);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
 
-// .hint-span {
-//     color: seashell;
-//     font-size: 0.8rem;
-// }
+.form-control {
+    font-size: 1rem;
+}
+  
+button {
+    color: #3555bd;
+    padding: 0.3rem;
+    width: 8rem;
+    font-size: 1rem;
+}
+
+.col {
+    text-align: start;
+}

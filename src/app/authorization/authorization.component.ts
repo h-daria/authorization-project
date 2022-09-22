@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-authorization',
@@ -10,7 +11,7 @@ export class AuthorizationComponent implements OnInit {
   authorizationForm!: FormGroup;
   value = '';
   
-  constructor() { }
+  constructor( public authService: AuthService) { }
 
   ngOnInit(): void {
     this.authorizationForm = new FormGroup({

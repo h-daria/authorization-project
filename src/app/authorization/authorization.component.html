@@ -38,7 +38,18 @@
             </div>
         </div>
 
-        <button mat-stroked-button routerLink="auth"> Sign In </button>
+        <div id="buttons">
+            <button mat-stroked-button routerLink="auth" 
+                (click)="authService.signIn(authorizationForm.get('user-email')?.value, authorizationForm.get('user-password')?.value)">
+            Sign In 
+            </button>
+
+            <div class="formGroup">
+                <button type="button" mat-stroked-button (click)="authService.googleAuth()" style="width: fit-content;">
+                Sign in with Google
+                </button>
+            </div>
+        </div>
 
     </form>
 </div>

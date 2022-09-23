@@ -1,6 +1,6 @@
 <div id="container">
     <h1> Sign In </h1>
-    <form [formGroup]="authorizationForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="authorizationForm">
         <div class="row my-3">
             <div class="col">
               <label for="user-email" class="form-label"> Email </label>
@@ -39,14 +39,14 @@
         </div>
 
         <div id="buttons">
-            <button mat-stroked-button routerLink="auth" 
-                (click)="authService.signIn(authorizationForm.get('user-email')?.value, authorizationForm.get('user-password')?.value)">
-            Sign In 
+            <button mat-stroked-button 
+                    (click)="authService.signIn(authorizationForm.get('user-email')?.value, authorizationForm.get('user-password')?.value)">
+                Sign In 
             </button>
 
             <div class="formGroup">
                 <button type="button" mat-stroked-button (click)="authService.googleAuth()" style="width: fit-content;">
-                Sign in with Google
+                    Sign in with Google
                 </button>
             </div>
         </div>

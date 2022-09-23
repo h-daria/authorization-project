@@ -1,0 +1,47 @@
+#container {
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid lightgray;
+    min-height: 20rem;
+    height: fit-content;
+    width: 30rem;
+    padding: 1.5rem;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid rgb(254, 87, 41);
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.hint-span {
+    color: rgb(254, 87, 41);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.form-control {
+    font-size: 1rem;
+}
+  
+button {
+    color: #3555bd;
+    padding: 0.3rem;
+    margin: 0 1rem;
+    width: 8rem;
+    font-size: 1rem;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.col {
+    text-align: start;
+}

@@ -1,1 +1,102 @@
-<p>sign-up works!</p>
+<div id="container">
+    <h1> Sign Up </h1>
+    <form [formGroup]="signUpForm">
+        <div class="row my-3">
+            <div class="col">
+              <label for="user-email" class="form-label"> Email </label>
+              <input type="email" 
+                     class="form-control form-control-sm" 
+                     id="user-email"
+                     formControlName="user-email" 
+                     placeholder="email@adress.com" 
+                     maxlength="30">
+              <span *ngIf="!signUpForm.get('user-email')?.valid && signUpForm.get('user-email')?.touched"
+                     class="hint-span">
+                Please, enter valid email!
+              </span>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col">
+              <label for="user-name" class="form-label"> Name </label>
+              <input type="text" 
+                     class="form-control form-control-sm" 
+                     id="user-name"
+                     formControlName="user-name" 
+                     placeholder="Name" 
+                     maxlength="30">
+              <span *ngIf="!signUpForm.get('user-name')?.valid && signUpForm.get('user-name')?.touched"
+                     class="hint-span">
+                Please, enter your name!
+              </span>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col">
+                <label for="user-password" class="form-label"> Password </label>
+                <input type="password" 
+                       class="form-control form-control-sm" 
+                       id="user-password"
+                       formControlName="user-password" 
+                       maxlength="20">
+                    <span *ngIf="!(signUpForm.get('user-password')?.valid) && (signUpForm.get('user-password')?.touched)"
+                        class="hint-span">
+                        <span *ngIf="signUpForm.get('user-password')?.errors?.['required']"
+                               class="hint-span">
+                            Password is required!
+                        </span>
+                        <span class="hint-span" *ngIf="(signUpForm.get('user-password')?.errors?.['passwordNotStrength']) && !(signUpForm.get('user-password')?.errors?.['required'])">
+                            Your password must have lower case, upper case and numeric characters.
+                        </span>    
+                    </span> 
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col">
+                <label for="user-confirm-password" class="form-label"> Confirm password </label>
+                <input type="password" 
+                       class="form-control form-control-sm" 
+                       id="user-confirm-password"
+                       formControlName="user-confirm-password" 
+                       maxlength="20">
+                <span *ngIf="!signUpForm.get('user-confirm-password')?.valid && signUpForm.get('user-confirm-password')?.touched"
+                       class="hint-span">
+                    <span *ngIf="signUpForm.get('user-confirm-password')?.errors?.['required']"
+                           class="hint-span">
+                        Please, confirm your password!
+                    </span>
+                    <span *ngIf="(signUpForm.get('user-confirm-password')?.errors?.['passwordMismatch']) && !(signUpForm.get('user-confirm-password')?.errors?.['required'])">
+                        Confirm password doesn't match your password!
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        
+        <div id="buttons">
+            <div title="{{!signUpForm.valid ? 'Enter user Data' : 'Confirm'}}">
+                <button mat-stroked-button 
+                        [disabled]="!signUpForm.valid"
+                        (click)="authService.signUp(signUpForm.get('user-email')?.value, signUpForm.get('user-password')?.value)">
+                    Sign Up 
+                </button>
+            </div>
+            <div class="formGroup">
+                <button type="button" mat-stroked-button (click)="authService.googleAuth()" style="width: fit-content;">
+                    Continue with Google
+                </button>
+            </div>
+        </div>
+
+        <div>
+            <span>
+                Already have an account?
+                <button mat-stroked-button routerLink="/auth">Log In</button>
+            </span>
+        </div>
+
+    </form>
+</div>

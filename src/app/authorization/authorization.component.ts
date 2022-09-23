@@ -38,8 +38,4 @@ export class AuthorizationComponent implements OnInit {
     }
     return null;
   }
-
-  onSubmit() {
-
-  }
 }

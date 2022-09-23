@@ -2,6 +2,8 @@ header {
     height: fit-content;
     border-bottom: 1px solid lightgray;
     padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
 } 
 
 h1 {
@@ -12,11 +14,13 @@ h1 {
 }
 
 div {
-    height: 82%;
+    min-height: 82%;
+    height: fit-content;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
 }
 
 
@@ -94,43 +98,14 @@ ul li a {
     }
 }
 
-// ul li a::after {
-//     content: " ";
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100px;
-//     height: 100px;
-//     border-radius: 23px;
-//     border: 2px solid rgba(255, 255, 255, 0.2);
-//     background: rgba(255, 255, 255, 0.4);
-//     backdrop-filter: blur(5px);
-//     -webkit-backdrop-filter: blur(5px);
-//     z-index: -1;
-//     transition: 0.3s;
-// }
-// ul li a:hover {
-//     transform: rotate(-15deg);
-// }
-// ul li a:hover::before {
-//     transform: rotate(15deg);
-// }
-
-// ul li a::before {
-//     content: " ";
-//     position: absolute;
-//     width: 100px;
-//     height: 100px;
-//     background: #dc2743;
-//     right: -5px;
-//     bottom: 0;
-//     border-radius: 23px;
-//     z-index: -1;
-//     transform-origin: 100% 100%;
-//       transform: rotate(10deg);
-//     transition: 0.3s;
-// }
-
 ul li:nth-child(2) a::before {
     background: #1DA1F2;
+}
+
+button {
+    color: #3555bd;
+    padding: 0.3rem;
+    margin: 0 1rem;
+    width: 8rem;
+    font-size: 1rem;
 }
